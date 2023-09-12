@@ -27,15 +27,19 @@ const twoSum = function(nums, target) {
 
 //Optimized - Using HashMap
 const twoSumOpt = function(nums, target) {
-   let newMap = new Map()
-   
-   for (let i = 0; i < nums.length; i++) {      
-      if (newMap.has(target - nums[i]))
-      return [i, newMap.get(target - nums[i])]
-      
-      newMap.set(nums[i], i)
+   let newMap = new Map();
+   try {
+
+      for (let i = 0; i < nums.length; i++) {      
+         if (newMap.has(target - nums[i]))
+         return [i, newMap.get(target - nums[i])]
+         
+         newMap.set(nums[i], i)
+      }
+   } finally {
+      delete newMap;
    }
 };
 
-// console.log(twoSumOpt([2,11,15,7],9));
-// console.log(twoSumOpt([3,2,3], 6));
+console.log(twoSumOpt([2,11,15,7],9));
+console.log(twoSumOpt([3,2,3], 6));

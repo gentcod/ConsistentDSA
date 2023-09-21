@@ -1,4 +1,4 @@
-module example/hello
+module example/largestNum
 
 go 1.19
 

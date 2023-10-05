@@ -5,7 +5,7 @@ class Node:
       self.next = None
 
    def __repr__(self) -> str:
-      return f'Node data: {self.data}\n'
+      return f'{self.data}\n'
 
 
 #Singly Linked List
@@ -13,6 +13,8 @@ class LinkedList:
    #Constructor
    def __init__(self):
       self.head = None
+      self.nodes = []
+
 
    #Check if Linked List is empty
    def is_empty(self):
@@ -34,6 +36,7 @@ class LinkedList:
       node = Node(data)
       node.next = self.head
       self.head = node
+      self.nodes.insert(0, node)
 
    #Search for key
    def search(self, key):
@@ -66,6 +69,7 @@ class LinkedList:
 
          prev_node.next = new_node
          new_node.next = next_node
+         self.nodes.insert(index, new_node)
 
    #remove from linked list
    def remove(self, key):
@@ -88,30 +92,39 @@ class LinkedList:
 
    #Display linked list
    def __repr__(self):
-      nodes = []
-      current = self.head
+      # nodes = []
+      # current = self.head
 
-      while current:
-         if current is self.head:
-            nodes.append(f'[Head: {current.data}]')
-         elif current.next is None:
-            nodes.append(f'[Tail: {current.data}]')
-         else:
-            nodes.append(f'[{current.data}]')
+      # while current:
+      #    if current is self.head:
+      #       nodes.append(f'[Head: {current.data}]')
+      #    elif current.next is None:
+      #       nodes.append(f'[Tail: {current.data}]')
+      #    else:
+      #       nodes.append(f'[{current.data}]')
          
-         current = current.next
+      #    current = current.next
+      # return '-> '.join(nodes)
+
+      nodes = []
+      for i in self.nodes:
+         if i is self.head:
+            nodes.append(f'[Head: {i.data}]')
+         elif i.next is None:
+            nodes.append(f'[Tail: {i.data}]')
+         else:
+            nodes.append(f'[{i.data}]')
+
       return '-> '.join(nodes)
    
 
-linked_list = LinkedList()
-linked_list.add(1)
-linked_list.add(2)
-linked_list.add(3)
-linked_list.add(4)
+# linkedist = LinkedList()
+# linkedist.add(1)
+# linkedist.add("Hello")
+# linkedist.add(3)
+# linkedist.add(4)
+# print(linkedist.size())
 
-print(linked_list)
+# # linkedist.insert("There", 3)
 
-linked_list.insert("Hello", 2)
-
-print(linked_list)
-print(linked_list.size())
+# # print(linkedist)

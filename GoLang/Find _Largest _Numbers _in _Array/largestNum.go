@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-	// "math"
-
 	"rsc.io/quote"
 )
 

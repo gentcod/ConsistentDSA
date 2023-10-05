@@ -1,8 +1,7 @@
-package main
+package largestNum
 
 import (
 	"fmt"
-	"rsc.io/quote"
 )
 
 //PROBLEM:
@@ -12,8 +11,7 @@ import (
    Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
  */
 //SOLUTION
-func main()  {
-	fmt.Println(quote.Go())
+func Solve()  {
 	arr := [][]int{{4, 5, 1, 3}, {13, 27, 18, 26}, {32, 35, 37, 39}, {1000, 1001, 857, 1}}
 	fmt.Println((largestNumInSubArray(arr)))
 }

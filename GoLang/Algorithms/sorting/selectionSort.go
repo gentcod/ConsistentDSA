@@ -2,8 +2,7 @@ package selectionSort
 
 import "fmt"
 
-func Solve() {
-	numbers := []int {2, 6, 1, 8, 10, 4, 1}
+func Solve(numbers []int) {
 	fmt.Println(selectionSort(numbers))
 }
 

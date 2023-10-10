@@ -14,11 +14,8 @@ def recursive_binary_search(list: list, target):
             
 
 def verify(result):
-    print("Target found: ", result)
+    print(f"Target found: {result}")
 
-numbers = [1, 2, 3, 4, 5, 6, 7, 8]
-arrString = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8]
 
-verify(recursive_binary_search(numbers, 12))
-verify(recursive_binary_search(numbers, 6))
-verify(recursive_binary_search(arrString, "h"))
+# verify(recursive_binary_search(numbers, 6))

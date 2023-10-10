@@ -6,7 +6,7 @@
 
    You can return the answer in any order.
  */
-//Crude
+//Crude - Brute force
 const twoSum = function(nums, target) {
    let index = [];
    for (let i of nums) {
@@ -22,24 +22,17 @@ const twoSum = function(nums, target) {
    return index;
 };
 
-// console.log(twoSum([2,11,15,7],9));
-// console.log(twoSum([3,2,3], 6));
-
 //Optimized - Using HashMap
 const twoSumOpt = function(nums, target) {
    let newMap = new Map();
-   try {
 
-      for (let i = 0; i < nums.length; i++) {      
-         if (newMap.has(target - nums[i]))
-         return [i, newMap.get(target - nums[i])]
-         
-         newMap.set(nums[i], i)
-      }
-   } finally {
-      delete newMap;
+   for (let i = 0; i < nums.length; i++) {      
+      if (newMap.has(target - nums[i]))
+      return [i, newMap.get(target - nums[i])]
+      
+      newMap.set(nums[i], i)
    }
 };
 
-console.log(twoSumOpt([2,11,15,7],9));
-console.log(twoSumOpt([3,2,3], 6));
+// console.log(twoSumOpt([2,11,15,7],9));
+// console.log(twoSumOpt([3,2,3], 6));

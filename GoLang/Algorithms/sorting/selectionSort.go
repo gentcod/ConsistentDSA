@@ -1,8 +1,8 @@
-package selectionSort
+package sorting
 
 import "fmt"
 
-func Solve(numbers []int) {
+func SelectionSort(numbers []int) {
 	fmt.Println(selectionSort(numbers))
 }
 

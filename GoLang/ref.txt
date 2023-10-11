@@ -1,0 +1,5 @@
+Optional created variables to help run some algorithms:
+numbers := []int {2, 6, 1, 8, 10, 4, 1}
+
+Optional quick reference for package import
+"github.com/gentcod/ConsistentDSA/Algorithms/[packageName]"

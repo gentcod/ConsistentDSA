@@ -3,7 +3,6 @@ def twoSum(arr, target):
 
    for i, n in enumerate(arr):
       diff = target - n
-      print(hashMap)
       if diff in hashMap:
          return [hashMap[diff], i]
       

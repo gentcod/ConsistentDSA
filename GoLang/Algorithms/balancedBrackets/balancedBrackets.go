@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func Solve(str string) {
+func Check(str string) {
 	fmt.Println(isBracketsBalanced(str))
 }
 

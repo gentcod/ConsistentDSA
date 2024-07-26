@@ -1,4 +1,4 @@
-package balancedbrackets
+package balancedBrackets
 
 import (
 	"fmt"
@@ -42,13 +42,10 @@ func isBracketsBalanced(bracketString string) bool {
 				current := stack[len(stack) - 1]
 				last := (len(stack) -1)
 				stack = append(stack[:last], stack[last + 1:]...)
-				fmt.Println(current, isReversed(current), bracketArr[i])
 				if isReversed(current) != bracketArr[i] {
 					return false
 				}
 		}
 	}
-	fmt.Println(stack)
-
 	return len(stack) == 0
 }

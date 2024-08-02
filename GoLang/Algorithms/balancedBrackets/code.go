@@ -35,16 +35,18 @@ func isBracketsBalanced(bracketString string) bool {
 		if len(isReversed(bracketArr[i])) != 0 {
 			stack = append(stack, bracketArr[i])
 		} else {
-				if len(stack) == 0 {
-					return false
-				}
+			if len(stack) == 0 {
+				return false
+			}
 
-				current := stack[len(stack) - 1]
-				last := (len(stack) -1)
-				stack = append(stack[:last], stack[last + 1:]...)
-				if isReversed(current) != bracketArr[i] {
-					return false
-				}
+			current := stack[len(stack) - 1]
+			last := len(stack) -1
+			fmt.Println(stack)
+			stack = append(stack[:last], stack[last + 1:]...)
+			fmt.Println("->",stack)
+			if isReversed(current) != bracketArr[i] {
+				return false
+			}
 		}
 	}
 	return len(stack) == 0

@@ -23,10 +23,11 @@ def isBracketsBalanced(bracketString):
          if not stack:
             return False
          
+         print(stack)
          current = stack.pop()
          reversed_bracket = isReversed(current)
 
-         # print(f'Current: {current} -> Reversed: {reversed_bracket} -> Bracket: {bracket}')
+         print(f'Current: {current} -> Reversed: {reversed_bracket} -> Bracket: {bracket}')
          if reversed_bracket == None or reversed_bracket != bracket:
             return False
          

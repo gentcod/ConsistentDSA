@@ -1,4 +1,4 @@
-package validanagram
+package validAnagram;
 
 import (
 	"fmt"
@@ -8,12 +8,13 @@ import (
 )
 
 func Solve(s string, t string) {
-	fmt.Println(validanagram(s, t))
+	fmt.Println(validAnagram(s, t))
 }
 
+// Using Byte Signature of strings
 type Key [26]byte
 
-func validanagram(s string, t string) bool {
+func validAnagram(s string, t string) bool {
 	sByte := getStrKey(s)
 	tByte := getStrKey(t)
 
@@ -28,7 +29,7 @@ func getStrKey(s string) (key Key){
 }
 
 // Using HashMap
-// func validanagram(s string, t string) bool {
+// func validAnagram(s string, t string) bool {
 // 	if len(s) != len(t) {
 // 		return false
 // 	}

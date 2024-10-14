@@ -11,17 +11,20 @@ def topKFrequent(nums: list[int], k: int):
       if hashMap[nums[i]] > maxoccur:
          maxoccur = hashMap[nums[i]]
 
-   freq: list[int] = [[] for _ in range(maxoccur+1)]
+   freq = [[] for _ in range(maxoccur+1)]
    
    for i in hashMap:
       freq[hashMap[i]].append(i)
 
-   for i in range(k):
-      for j in freq[maxoccur]:
+   while len(result) != k:
+      for i in freq[maxoccur]:
          if len(result) == k:
             return result
-         result.append(j)
+         result.append(i)
 
       maxoccur -= 1
 
    return result
+
+nums = [5,3,1,1,1,3,73,1]
+print('Answer: ',topKFrequent(nums,2))

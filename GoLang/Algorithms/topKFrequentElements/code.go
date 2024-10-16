@@ -11,10 +11,7 @@ func topKFrequentElements(nums []int, k int) (result []int) {
 		return nums
 	}
 
-	// CREATE AN HASHMAP TO DETERMINE THE NUMBER OF TIMES EACH ELEMENT APPEAR
 	hashMap := make(map[int]int)
-
-	// INITIAL A MAX VARIABLE WHICH WILL BE THE BOUND FOR FREQUENCY ARRAY
 	max := 0
 
 	for _, val := range nums {
@@ -25,20 +22,17 @@ func topKFrequentElements(nums []int, k int) (result []int) {
 		}
 	}
 
-	// FREQUENCY USES THE INDEX OF EACH CHILD ARRAY/LIST AS REF TO ELEMENTS BASED ON NUMBER OF OCCURENCES
-	// IF AN ELEMENT foo OCCURS 2 TIMES freq[2] -> [foo]
 	freq := make([][]int, max+1)
 
 	for i, val := range hashMap {
 		freq[val] = append(freq[val], i)
 	}
 
-	for i := max; len(result) != k; i--{
+	for i := max; len(result) != k; i-- {
 		for j := range freq[i] {
-			if len(result) == k {
-				return result
+			if len(result) != k {
+				result = append(result, freq[i][j])
 			}
-			result = append(result, freq[i][j])
 		}
 	}
 
@@ -46,7 +40,7 @@ func topKFrequentElements(nums []int, k int) (result []int) {
 }
 
 
-// ---------------- ROUGH WORK, passes 16/21 test cases, due to time complexity
+// ---------------- ROUGH WORK, passes only 16/21 test cases, due to time complexity
 // func topKFrequentElements(nums []int, k int) (result []int) {
 // 	if len(nums) == k {
 // 		return nums

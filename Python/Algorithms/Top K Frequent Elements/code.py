@@ -18,9 +18,8 @@ def topKFrequent(nums: list[int], k: int):
 
    while len(result) != k:
       for i in freq[maxoccur]:
-         if len(result) == k:
-            return result
-         result.append(i)
+         if len(result) != k:
+            result.append(i)
 
       maxoccur -= 1
 

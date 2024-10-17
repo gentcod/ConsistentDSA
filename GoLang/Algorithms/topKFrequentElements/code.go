@@ -13,7 +13,6 @@ func topKFrequentElements(nums []int, k int) (result []int) {
 
 	hashMap := make(map[int]int)
 	max := 0
-
 	for _, val := range nums {
 		hashMap[val]++
 
@@ -23,24 +22,24 @@ func topKFrequentElements(nums []int, k int) (result []int) {
 	}
 
 	freq := make([][]int, max+1)
-
 	for i, val := range hashMap {
 		freq[val] = append(freq[val], i)
 	}
 
-	for i := max; len(result) != k; i-- {
-		for j := range freq[i] {
+	for len(result) != k {
+		for i := range freq[max] {
 			if len(result) != k {
-				result = append(result, freq[i][j])
+				result = append(result, freq[max][i])
 			}
 		}
+		max--
 	}
 
 	return result
 }
 
 
-// ---------------- ROUGH WORK, passes only 16/21 test cases, due to time complexity
+// ---------------- ROUGH WORK, passes 16/21 test cases, due to time complexity
 // func topKFrequentElements(nums []int, k int) (result []int) {
 // 	if len(nums) == k {
 // 		return nums
@@ -85,3 +84,8 @@ func topKFrequentElements(nums []int, k int) (result []int) {
 
 // 	return key
 // }
+
+// SAMPLE DATA
+// nums := []int {-1,1,4,-4,3,5,4,-2,3,-1}
+// nums := []int {5,3,1,1,1,3,5,73,1}
+// nums := []int {1,1,1,2,2,3,3}

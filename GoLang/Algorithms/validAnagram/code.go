@@ -80,3 +80,6 @@ func IsAnagram(s string, t string) bool {
 
 	return true
 }
+
+// SAMPLE DATA
+// strs := []string {"eat","tea","tan","ate","nat","bat"}

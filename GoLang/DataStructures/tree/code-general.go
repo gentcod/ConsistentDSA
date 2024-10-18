@@ -2,6 +2,12 @@ package tree
 
 import "fmt"
 
+// type BSTTree[T comparable] struct {
+// 	Root     *T
+// 	count    int
+// 	vertices int
+// }
+
 type Data struct {
 	Data   any
 	Weight int
@@ -52,7 +58,6 @@ func (n *Node[T]) Insert(value Data) {
 			} else {
 				n.LChild.parent = n
 			} 
-			// fmt.Println("left-child: ", n.LChild.Data, "parent: ", n.LChild.parent.Data)
 		} else {
 			n.LChild.Insert(value)
 		}
@@ -66,7 +71,6 @@ func (n *Node[T]) Insert(value Data) {
 			} else {
 				n.RChild.parent = n
 			}
-			// fmt.Println("right-child: ", n.RChild.Data, "parent: ", n.RChild.parent.Data)
 		} else {
 			n.RChild.Insert(value)
 		}
@@ -80,10 +84,20 @@ func (n *Node[T]) Diplay(pos string) {
 	if n.LChild != nil {
 		newPos := "left; Parent: %v"
 		n.LChild.Diplay(fmt.Sprintf(newPos, n.LChild.parent.Data.Weight))
-	}
-
-	if n.RChild != nil{
+	} 
+	
+	if n.RChild != nil {
 		newPos := "right; Parent: %v"
 		n.RChild.Diplay(fmt.Sprintf(newPos, n.RChild.parent.Data.Weight))
 	}
 }
+
+// SAMPLE DATA
+// data := []tree.Data{ 
+// 	{Data: "hi", Weight: 5}, 
+// 	{Data: "hey", Weight: 16}, 
+// 	{Data: "tudo", Weight: 18},
+// 	{Data: "try", Weight: 10},
+// 	{Data: "holla", Weight: 8},
+// 	{Data: "holla", Weight: 17},
+// }

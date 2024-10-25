@@ -29,18 +29,13 @@ func integerToRoman(n int) (r string) {
 					r += literals[i] + literals[keys[k-1]]
 				}
 			} else {
-				r += evalLiteral(div, literals[i])
+				for div > 0 {
+					r += literals[i]
+					div--
+				}
 			}
 		}
 		n = n % i
-	}
-
-	return
-}
-
-func evalLiteral (div int, l string) (r string) {
-	for i := div; i > 0; i-- {
-		r += l
 	}
 
 	return

@@ -13,7 +13,7 @@ const integerToRoman = (n) => {
 
 	for (let i = 0; i < keys.length; i++) {		
 		if (n % keys[i] != n) {
-			const div = (n - (n % keys[i])) / keys[i]			
+			let div = (n - (n % keys[i])) / keys[i]			
 			if (div == 4) {
 				if (roman.length > 0 && literals[keys[i-1]] == roman[roman.length-1]) {					
 					roman = roman.split("").slice(0,-1).join("")
@@ -22,7 +22,10 @@ const integerToRoman = (n) => {
 					roman += literals[keys[i]] + literals[keys[i-1]]
 				}
 			} else {
-				roman += evalLiteral(div, literals[keys[i]])
+				while (div != 0) {
+					roman += literals[keys[i]]
+					div--
+				}
 			}
 		}
 		n = n % keys[i]
@@ -31,14 +34,5 @@ const integerToRoman = (n) => {
 	return roman
 }
 
-const evalLiteral = (div, str) => {
-	let s = ""
-	for (let i = div; i > 0; i--) {
-		s += str
-	}
-
-	return s
-}
-
-console.log(integerToRoman(4));
+console.log(integerToRoman(490));
 

@@ -13,11 +13,9 @@ func main() {
 	// Example -> resolve(integertoroman.Solve, 450)
 }
 
-// func resolve(algo interface{}, args ...interface{}) {
 func resolve(algo interface{}, args ...interface{}) {
 	start := time.Now()
 
-	// Use reflection to call the function with arguments
 	fn := reflect.ValueOf(algo)
 	in := make([]reflect.Value, len(args))
 	for i, arg := range args {

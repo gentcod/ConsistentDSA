@@ -8,7 +8,6 @@ import (
 
 func main() {
 	fmt.Println("Loading Programs......")
-
 	//Run your imported modules here - Check ref.txt
 	// Example -> resolve(integertoroman.Solve, 450)
 }
@@ -21,7 +20,6 @@ func resolve(algo interface{}, args ...interface{}) {
 	fn := reflect.ValueOf(algo)
 	in := make([]reflect.Value, len(args))
 	for i, arg := range args {
-		fmt.Println(i, arg)
 		in[i] = reflect.ValueOf(arg)
 	}
 	fn.Call(in)

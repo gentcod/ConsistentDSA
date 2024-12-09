@@ -4,8 +4,7 @@ import (
 	"fmt"
 )
 
-// PROBLEM lEETCODE - https://leetcode.com/problems/trapping-rain-water/description/
-
+// Leetcode Problem: https://leetcode.com/problems/trapping-rain-water/
 func Solve(height []int) {
 	fmt.Println(trappingwater(height))
 }

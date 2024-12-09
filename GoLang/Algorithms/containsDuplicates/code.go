@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// Leetcode Problem: https://leetcode.com/problems/contains-duplicate/description/
 func Solve(arr []int) {
 	fmt.Println(containsDuplicates(arr))
 }

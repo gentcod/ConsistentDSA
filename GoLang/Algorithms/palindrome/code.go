@@ -7,6 +7,7 @@ import (
 	// "unicode"
 )
 
+// Leetcode Problem: https://leetcode.com/problems/valid-palindrome/
 func Solve(val string) {
 	fmt.Println(isPalindrome(val))
 }

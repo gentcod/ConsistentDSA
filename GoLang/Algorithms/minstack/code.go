@@ -1,5 +1,6 @@
 package minstack
 
+// Leetcode Problem: https://leetcode.com/problems/min-stack/
 // IMPROVED TIME AND SPACE OMPLEXITY
 type MinStack struct {
 	top  int

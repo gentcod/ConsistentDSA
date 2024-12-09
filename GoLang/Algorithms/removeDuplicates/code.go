@@ -5,6 +5,7 @@ import (
 	// "sort"
 )
 
+// Leetcode Problem: https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 func Solve(arr []int) {
 	fmt.Println(removeDuplicates(arr))
 }

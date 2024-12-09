@@ -2,7 +2,8 @@ package slidingwindow
 
 import "fmt"
 
-func MaxProfit(arr []int) {
+// Leetcode Problem: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+func Solve(arr []int) {
 	fmt.Println(maxProfit(arr))
 }
 
@@ -25,7 +26,6 @@ func maxProfit(prices []int) int {
 		} else {
 			l = r
 		}
-
 		r += 1
 	}
 

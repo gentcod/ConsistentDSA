@@ -11,9 +11,17 @@ import (
    Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
  */
 //SOLUTION
-func Solve()  {
-	arr := [][]int{{4, 5, 1, 3}, {13, 27, 18, 26}, {32, 35, 37, 39}, {1000, 1001, 857, 1}}
-	fmt.Println((largestNumInSubArray(arr)))
+func Solve(arr [][]int)  {
+	fmt.Println(largestNumInSubArray(arr))
+}
+
+func largestNumInSubArray(arr [][]int) []int{
+	max := []int{}
+
+	for i := 0; i < len(arr); i++ {
+		max = append(max, findMax(arr[i]))
+	}
+	return max
 }
 
 func findMax(arr []int) int {
@@ -29,11 +37,4 @@ func findMax(arr []int) int {
 	return max
 }
 
-func largestNumInSubArray(arr [][]int) []int{
-	max := []int{}
-
-	for i := 0; i < len(arr); i++ {
-		max = append(max, findMax(arr[i]))
-	}
-	return max
-}
+// Test data: arr := [][]int{{4, 5, 1, 3}, {13, 27, 18, 26}, {32, 35, 37, 39}, {1000, 1001, 857, 1}}

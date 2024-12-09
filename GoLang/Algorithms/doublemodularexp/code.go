@@ -5,6 +5,7 @@ import (
 	// "math/big"
 )
 
+// Leetcode Problem: https://leetcode.com/problems/double-modular-exponentiation/
 func Solve(variables [][]int, target int) {
 	fmt.Println(getGoodIndices(variables, target))
 }

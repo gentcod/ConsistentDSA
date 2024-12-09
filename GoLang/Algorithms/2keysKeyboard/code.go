@@ -2,6 +2,7 @@ package twokeyskeyboard
 
 import "fmt"
 
+// Leetcode Problem: https://leetcode.com/problems/2-keys-keyboard/description/
 func Solve(n int) {
 	fmt.Println(minSteps(n))
 }
@@ -13,7 +14,6 @@ func minSteps(n int) int {
 	// FIND THE HIGHIEST DIVISOR, RECURSIVE ADD n / DIVISOR
 	for i := n >> 1; i > 0; i-- {
 		if (n % i) == 0 {
-			fmt.Println("nval: ", n,"div: ",i, "calc: ", n / i)
 			return n / i + minSteps(i)
 		}
 	}

@@ -6,6 +6,7 @@ import (
 	// "strings"
 )
 
+// Leetcode Problem: https://leetcode.com/problems/encode-and-decode-strings/
 func Solve(value []string) {
 	fmt.Println(encode(value))
 	fmt.Println(decode(encode(value)))
@@ -76,3 +77,6 @@ func decode(value string) (res []string) {
 
 // 	return
 // }
+
+// TODO: resolve test cases for : ["1,23","45,6","7,8,9"] 
+// and ["","   ","!@#$%^&*()_+","LongStringWithNoSpaces","Another, String With, Commas"]

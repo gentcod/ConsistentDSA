@@ -2,6 +2,7 @@ package validsudoku
 
 import "fmt"
 
+// Leetcode Problem: https://leetcode.com/problems/valid-sudoku/description/
 func Solve(board [][]byte) {
 	fmt.Println(isValidSudoku(board))
 }

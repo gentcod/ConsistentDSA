@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// Leetcode Problem: https://leetcode.com/problems/valid-parentheses/
 func Solve(str string) {
 	fmt.Println(isBracketsBalanced(str))
 }

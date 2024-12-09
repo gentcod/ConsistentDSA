@@ -6,3 +6,4 @@ Optional quick reference for package import
 
 Run algorithm
 - packageName.Solve(acceptedArg)
+- resolve(packageName.Solve, acceptedArg)

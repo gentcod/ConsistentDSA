@@ -7,25 +7,20 @@ func Solve(arr []int, target int) {
 	fmt.Print(twoSum(arr, target))
 }
 
-func twoSum(arr []int, target int) []int {
+func twoSum(arr []int, target int) (res []int) {
 	hashMap := make(map[int]int)
-	indexArr := []int{}
 
 	for i := 0; i < len(arr); i++ {
 		diff := target - arr[i]
 		num, ok := hashMap[arr[i]]
 
 		if ok {
-			indexArr = append(indexArr, num, i)
-
-			//Ensure only first two indexes are recorded
-			if len(indexArr) <= 2 {
-				return indexArr
-			}
+			res = append(res, num, i)
+			return
 		}
 
 		hashMap[diff] = i
 	}
 
-	return indexArr
+	return
 }

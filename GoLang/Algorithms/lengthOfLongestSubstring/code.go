@@ -17,11 +17,9 @@ func lengthOfLongestSubstring(s string) (c int) {
 		p, ok := hash[char]
 		if ok && l <= p+1 {
 			l=p+1
-			r++
-		} else {
-			r++
-		}
+		} 
 		
+		r++
 		hash[char] = i
 		if r-l > c {
 			c = r-l

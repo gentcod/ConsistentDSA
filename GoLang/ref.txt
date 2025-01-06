@@ -1,5 +1,9 @@
 Optional created variables to help run some algorithms:
 - numbers := []int {2, 6, 1, 8, 10, 4, 1}
+- In the case of running alorithms that work with LinkedLists, 
+   helper functions have been created to initialize a linkedlist and get the values in the linkedlist
+   Refrence the /helper/helper.go file. Use this to create a linkedlist -> 
+      node1 := helper.InitListNode([]int{5,6,4})
 
 Optional quick reference for package import
 - "github.com/gentcod/ConsistentDSA/Algorithms/[packageName]"

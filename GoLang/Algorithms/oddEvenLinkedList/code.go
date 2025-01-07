@@ -2,19 +2,16 @@ package oddevenlinkedlist
 
 import (
 	"fmt"
+
+	"github.com/gentcod/ConsistentDSA/helper"
 )
 
 // Leetcode Problem: https://leetcode.com/problems/odd-even-linked-list/
-func Solve(head *ListNode) {
+func Solve(head *helper.ListNode) {
 	fmt.Println(oddEvenList(head))
 }
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
-func oddEvenList(head *ListNode) (res *ListNode) {
+func oddEvenList(head *helper.ListNode) (res *helper.ListNode) {
 	odd := []int{}
 	even := []int{}
 	comb := []int{}
@@ -35,7 +32,7 @@ func oddEvenList(head *ListNode) (res *ListNode) {
 	comb = append(comb, even...)
 
 	for n := len(comb) - 1; n >= 0; n-- {
-		node := &ListNode{
+		node := &helper.ListNode{
 			Val:  comb[n],
 			Next: nil,
 		}

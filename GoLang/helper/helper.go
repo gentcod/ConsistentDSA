@@ -28,3 +28,9 @@ func GetListNodeValues(node *ListNode) (res []int) {
 	}
 	return
 }
+
+type TreeNode struct {
+	Val int
+	Left *TreeNode
+	Right *TreeNode
+}

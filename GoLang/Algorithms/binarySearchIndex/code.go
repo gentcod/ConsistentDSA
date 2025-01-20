@@ -1,4 +1,4 @@
-package boiler
+package binarysearchindex
 
 import (
 	"fmt"

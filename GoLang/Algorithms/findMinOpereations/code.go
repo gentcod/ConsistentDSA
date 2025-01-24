@@ -11,9 +11,9 @@ func Solve(nums []int) {
 
 func minimumOperations(nums []int) (c int) {
 	for i := range nums {
-		 if nums[i] % 3 != 0 {
-			  c++
-		 }
+		if nums[i]%3 != 0 {
+			c++
+		}
 	}
 	return
 }

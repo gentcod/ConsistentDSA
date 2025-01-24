@@ -16,8 +16,8 @@ type Data struct {
 type Node[T Data] struct {
 	Data   *Data
 	parent *Node[T] // for reference when traversing the tree
-	LChild *Node[T]
-	RChild *Node[T]
+	Left *Node[T]
+	Right *Node[T]
 }
 
 type BSTTree[T Data] struct {
@@ -51,28 +51,28 @@ func (n *Node[T]) Insert(value Data) {
 	}
 
 	if value.Weight < n.Data.Weight {
-		if n.LChild == nil {
-			n.LChild = &Node[T]{Data: &value}
-			if n.parent != nil && n.parent.LChild == nil {
-				n.LChild.parent = n.parent
+		if n.Left == nil {
+			n.Left = &Node[T]{Data: &value}
+			if n.parent != nil && n.parent.Left == nil {
+				n.Left.parent = n.parent
 			} else {
-				n.LChild.parent = n
+				n.Left.parent = n
 			} 
 		} else {
-			n.LChild.Insert(value)
+			n.Left.Insert(value)
 		}
 	}
 
 	if value.Weight > n.Data.Weight {
-		if n.RChild == nil {
-			n.RChild = &Node[T]{Data: &value}
-			if n.parent != nil && n.parent.RChild == nil {
-				n.RChild.parent = n.parent
+		if n.Right == nil {
+			n.Right = &Node[T]{Data: &value}
+			if n.parent != nil && n.parent.Right == nil {
+				n.Right.parent = n.parent
 			} else {
-				n.RChild.parent = n
+				n.Right.parent = n
 			}
 		} else {
-			n.RChild.Insert(value)
+			n.Right.Insert(value)
 		}
 	}
 }
@@ -81,14 +81,14 @@ func (n *Node[T]) Insert(value Data) {
 func (n *Node[T]) Diplay(pos string) {
 	fmt.Printf("Weight: %v, Position: %v, Data: %v\n", n.Data.Weight, pos, n.Data.Data)
 
-	if n.LChild != nil {
+	if n.Left != nil {
 		newPos := "left; Parent: %v"
-		n.LChild.Diplay(fmt.Sprintf(newPos, n.LChild.parent.Data.Weight))
+		n.Left.Diplay(fmt.Sprintf(newPos, n.Left.parent.Data.Weight))
 	} 
 	
-	if n.RChild != nil {
+	if n.Right != nil {
 		newPos := "right; Parent: %v"
-		n.RChild.Diplay(fmt.Sprintf(newPos, n.RChild.parent.Data.Weight))
+		n.Right.Diplay(fmt.Sprintf(newPos, n.Right.parent.Data.Weight))
 	}
 }
 

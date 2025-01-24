@@ -9,6 +9,7 @@ func Solve(s1 string, s2 string) {
 	fmt.Println(checkInclusion(s1, s2))
 }
 
+// TIME COMPLEXITY: O(n*m)
 func checkInclusion(s1 string, s2 string) bool {
 	bound := len(s1)
 	s1keyStr := getStrKey(s1)
@@ -30,5 +31,5 @@ func getStrKey(s string) (key Key) {
 	for i := range s {
 		key[s[i]-'a']++
 	}
-	return key
+	return key	
 }

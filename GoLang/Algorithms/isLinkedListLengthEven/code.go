@@ -2,18 +2,15 @@ package islinkedlistlengtheven
 
 import (
 	"fmt"
+
+	"github.com/gentcod/ConsistentDSA/helper"
 )
 
-func Solve(head *ListNode) {
+func Solve(head *helper.ListNode) {
 	fmt.Println(isLengthEven(head))
 }
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
-func isLengthEven(head *ListNode) bool {
+func isLengthEven(head *helper.ListNode) bool {
 	cur := head
 	c := 0
 
